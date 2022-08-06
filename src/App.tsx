@@ -28,6 +28,8 @@ function App() {
             .catch(function (error) {
               window.alert("Error sending message: " + error);
             });
+        } else {
+          alert("liffじゃないよー");
         }
       });
   };
@@ -48,6 +50,8 @@ function App() {
           .catch(function (error) {
             window.alert("Error sending message: " + error);
           });
+      } else {
+        alert("liffじゃね");
       }
     });
   };
