@@ -6,6 +6,7 @@ import liff from "@line/liff"; // 追加
 function App() {
   /* 追加: メッセージ送信 */
   const sendMessage = () => {
+    alert(process.env.REACT_APP_LIFF_ID);
     liff
       .init({ liffId: process.env.REACT_APP_LIFF_ID as string }) // LIFF IDをセットする
       .then(() => {
