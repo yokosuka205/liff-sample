@@ -39,7 +39,8 @@ function App() {
     liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
       if (!liff.isLoggedIn()) {
         liff.login({}); // ログインしていなければ最初にログインする
-      } else if (liff.isInClient()) {
+      } else {
+        // } else if (liff.isInClient()) {
         liff
           .getProfile() // ユーザ情報を取得する
           .then((profile) => {
@@ -50,8 +51,8 @@ function App() {
           .catch(function (error) {
             window.alert("Error sending message: " + error);
           });
-      } else {
-        alert("liffじゃね");
+        // } else {
+        //   alert("liffじゃね");
       }
     });
   };
