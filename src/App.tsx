@@ -56,7 +56,7 @@ function App() {
   };
 
   const nextPage = () => {
-    Router.push("/second");
+    Router.push("pages/second");
   };
 
   return (
