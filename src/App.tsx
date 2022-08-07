@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import liff from "@line/liff"; // 追加
+import Router from "next/router";
 
 function App() {
   /* 追加: メッセージ送信 */
@@ -54,6 +55,10 @@ function App() {
     });
   };
 
+  const nextPage = () => {
+    Router.push("/second");
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -69,6 +74,12 @@ function App() {
 
         <button className="button" onClick={getUserInfo}>
           show user info
+        </button>
+
+        <br />
+
+        <button className="button" onClick={nextPage}>
+          next page
         </button>
 
         <br />
