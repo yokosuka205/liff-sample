@@ -12,7 +12,8 @@ function App() {
       .then(() => {
         if (!liff.isLoggedIn()) {
           liff.login({}); // ログインしていなければ最初にログインする
-        } else if (liff.isInClient()) {
+          // } else if (liff.isInClient()) {
+        } else {
           // LIFFので動いているのであれば
           liff
             .sendMessages([
@@ -28,8 +29,6 @@ function App() {
             .catch(function (error) {
               window.alert("Error sending message: " + error);
             });
-        } else {
-          alert("liffじゃないよー");
         }
       });
   };
@@ -39,8 +38,8 @@ function App() {
     liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
       if (!liff.isLoggedIn()) {
         liff.login({}); // ログインしていなければ最初にログインする
-      } else {
         // } else if (liff.isInClient()) {
+      } else {
         liff
           .getProfile() // ユーザ情報を取得する
           .then((profile) => {
@@ -51,8 +50,6 @@ function App() {
           .catch(function (error) {
             window.alert("Error sending message: " + error);
           });
-        // } else {
-        //   alert("liffじゃね");
       }
     });
   };
@@ -67,11 +64,15 @@ function App() {
         <button className="button" onClick={sendMessage}>
           send message
         </button>
-        {/* 追加 */}
+
+        <br />
+
         <button className="button" onClick={getUserInfo}>
           show user info
         </button>
-        {/* 追加 */}
+
+        <br />
+
         <a
           className="App-link"
           href="https://reactjs.org"
